@@ -23,7 +23,7 @@ RestHandler="*res://addons/github-integration/scripts/RestHandler.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/github-integration/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [global]
 

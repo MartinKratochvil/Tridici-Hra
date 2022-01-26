@@ -28,6 +28,11 @@
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "right",
@@ -36,11 +41,6 @@ animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
@@ -53,14 +53,14 @@ animations = [ {
 "name": "down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "s_right",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "s_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "s_right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ) ],
@@ -276,6 +276,7 @@ format = 1
 autostart = true
 
 [node name="PanelBody" type="StaticBody2D" parent="."]
+visible = false
 z_index = 4
 
 [node name="Panel" type="Panel" parent="PanelBody"]
@@ -327,5 +328,12 @@ custom_fonts/font = SubResource( 10 )
 text = "0"
 align = 1
 valign = 1
+
+[node name="Button" type="Button" parent="PanelBody/Panel"]
+margin_left = 208.0
+margin_top = 255.0
+margin_right = 434.0
+margin_bottom = 308.0
+text = "Lol"
 
 [connection signal="timeout" from="Background/Timer1" to="." method="_on_Timer1_timeout"]

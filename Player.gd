@@ -14,6 +14,8 @@ var moving = false
 
 func get_input():
 	velocity = Vector2()
+	if($CanMove.text == "0"):
+		return
 	if Input.is_action_pressed("ui_right"):
 		dir = "right"
 		moving = true

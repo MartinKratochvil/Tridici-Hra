@@ -1,6 +1,6 @@
 extends Sprite
 
-var score = 0;
+var BestScore = [0, 0, 0]
 
 func _ready():
 	pass

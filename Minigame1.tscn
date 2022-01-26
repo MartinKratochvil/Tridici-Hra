@@ -28,14 +28,14 @@
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ) ],
@@ -43,19 +43,9 @@ animations = [ {
 "name": "up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "s_right",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "s_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "s_down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 12 ) ],
@@ -63,9 +53,19 @@ animations = [ {
 "name": "down",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "s_down",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "s_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "s_right",
 "speed": 5.0
 } ]
 
@@ -77,14 +77,14 @@ extents = Vector2( 18.3815, 29.133 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 4 ), ExtResource( 23 ), ExtResource( 24 ) ],
-"loop": false,
-"name": "on",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
 "name": "off",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 4 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": false,
+"name": "on",
 "speed": 5.0
 } ]
 

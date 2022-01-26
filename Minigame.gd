@@ -5,6 +5,7 @@ var rng = RandomNumberGenerator.new()
 var item = null
 var next = ["", "", ""]
 var time = 180
+var score = 0
 var ready = true
 
 func _ready():
@@ -37,47 +38,47 @@ func _input(event):
 						if item == "Paper":
 							print("Paper")
 							item = null
-							Score.score += 100
+							score += 100
 						elif item != null:
 							print("kokote");
 							item = null
-							Score.score -= 100;
+							score -= 100;
 					"Plastic":
 						if item == "Plastic":
 							print("Plastic")
 							item = null
-							Score.score += 100
+							score += 100
 						elif item != null:
 							print("kokote");
 							item = null
-							Score.score -= 100
+							score -= 100
 					"Glass":
 						if item == "Glass":
 							print("Glass")
 							item = null
-							Score.score += 100
+							score += 100
 						elif item != null:
 							print("kokote");
 							item = null
-							Score.score -= 100
+							score -= 100
 					"Organic":
 						if item == "Organic":
 							print("Organic")
 							item = null
-							Score.score += 100
+							score += 100
 						elif item != null:
 							print("kokote");
 							item = null
-							Score.score -= 100
+							score -= 100
 					"E-waste":
 						if item == "E-waste":
 							print("E-waste")
 							item = null
-							Score.score += 100
+							score += 100
 						elif item != null:
 							print("kokote");
 							item = null
-							Score.score -= 100
+							score -= 100
 					"Conveyor":
 						print("Conveyor")
 						if item == null && ready:
@@ -107,8 +108,8 @@ func _input(event):
 							print(item)
 							ready = true
 				if item == null : $Background/Player/body/Sprite.set_texture(load("res://assets/Items/None.png"))
-				if Score.score < 0: Score.score = 0
-				print("score: ", Score.score)
+				if score < 0: score = 0
+				print("score: ", score)
 			else:
 				#print("lol")
 				pass

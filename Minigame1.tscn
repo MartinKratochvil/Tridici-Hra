@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Minigame.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -94,8 +94,23 @@ extents = Vector2( 53.7883, 15.6337 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 29.7555, 30.9638 )
 
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/DroidSans.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://assets/DroidSans.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+font_data = SubResource( 9 )
+
 [node name="Minigame" type="Node2D"]
 script = ExtResource( 1 )
+time = 10
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 512, 300 )
@@ -117,6 +132,14 @@ animation = "s_down"
 position = Vector2( 10, 10 )
 z_index = 2
 shape = SubResource( 1 )
+
+[node name="CanMove" type="Label" parent="Background/Player"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="body" type="Area2D" parent="Background/Player"]
 position = Vector2( 10, 10 )
@@ -163,6 +186,17 @@ position = Vector2( 130, 120 )
 scale = Vector2( 0.1, 0.1 )
 z_index = 1
 texture = ExtResource( 21 )
+
+[node name="Label" type="Label" parent="Background/Conveyor"]
+margin_left = 138.0
+margin_top = 86.0
+margin_right = 260.0
+margin_bottom = 103.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Paper" type="Area2D" parent="Background"]
 position = Vector2( -363.767, 42.659 )
@@ -241,5 +275,59 @@ format = 1
 
 [node name="Timer1" type="Timer" parent="Background"]
 autostart = true
+
+[node name="PanelBody" type="StaticBody2D" parent="."]
+z_index = 2
+
+[node name="Panel" type="Panel" parent="PanelBody"]
+visible = false
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 832.0
+margin_bottom = 512.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelBody/Panel"]
+margin_left = 192.0
+margin_top = 32.0291
+margin_right = 384.0
+margin_bottom = 72.0291
+rect_rotation = -0.00867929
+custom_fonts/font = SubResource( 8 )
+text = "Score:"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="PanelBody/Panel"]
+margin_left = 192.0
+margin_top = 104.0
+margin_right = 384.0
+margin_bottom = 142.0
+custom_fonts/font = SubResource( 8 )
+text = "High score:"
+align = 1
+valign = 1
+
+[node name="LabelScore" type="Label" parent="PanelBody/Panel"]
+margin_left = 384.0
+margin_top = 32.0291
+margin_right = 448.0
+margin_bottom = 72.0291
+custom_fonts/font = SubResource( 10 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="LabelHighScore" type="Label" parent="PanelBody/Panel"]
+margin_left = 384.0
+margin_top = 104.0
+margin_right = 448.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 10 )
+text = "0"
+align = 1
+valign = 1
 
 [connection signal="timeout" from="Background/Timer1" to="." method="_on_Timer1_timeout"]

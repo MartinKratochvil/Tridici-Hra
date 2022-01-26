@@ -4,7 +4,7 @@ var firsttime = true
 var rng = RandomNumberGenerator.new()
 var item = null
 var next = ["", "", ""]
-var time = 180
+export var time = 180
 var score = 0
 var ready = true
 
@@ -27,6 +27,8 @@ func _ready():
 			5: 
 				next[i] = "E-waste"
 				get_node("Background/Conveyor/Item"+String(i)).set_texture(load("res://assets/Items/E-waste.png"))
+		$Background/Conveyor/Label.text = next[0]
+		#TODO Match
 
 func _input(event):
 	if event is InputEventKey:
@@ -85,6 +87,7 @@ func _input(event):
 							ready = false
 							item = next[0]
 							$Background/Player/body/Sprite.set_texture(load("res://assets/Items/" + item +".png"))
+							$Background/Conveyor/Label.text = next[1] #TODO Match
 							$Background/Conveyor/Item0.set_texture(load("res://assets/Items/None.png"))
 							for i in 2: next[i] = next[i + 1]
 							$Background/Conveyor/AnimatedSprite.play("on")
@@ -122,4 +125,7 @@ func _on_Timer1_timeout():
 	print(time, "s left")
 	if (time <= 0):
 		$Background/Timer1.stop()
-		get_tree().change_scene("res://Menu.tscn")
+		$PanelBody/Panel.visible = true
+		$Background/Player/CanMove.text = "0"
+		$PanelBody/Panel/LabelScore.text = str(Score.score)
+		#get_tree().change_scene("res://Menu.tscn")

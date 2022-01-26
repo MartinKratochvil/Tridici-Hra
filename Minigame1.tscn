@@ -164,6 +164,17 @@ scale = Vector2( 0.1, 0.1 )
 z_index = 1
 texture = ExtResource( 21 )
 
+[node name="Label" type="Label" parent="Background/Conveyor"]
+margin_left = 138.0
+margin_top = 86.0
+margin_right = 260.0
+margin_bottom = 103.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Paper" type="Area2D" parent="Background"]
 position = Vector2( -363.767, 42.659 )
 
@@ -241,5 +252,18 @@ format = 1
 
 [node name="Timer1" type="Timer" parent="Background"]
 autostart = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+z_index = 2
+
+[node name="Panel" type="Panel" parent="StaticBody2D"]
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 832.0
+margin_bottom = 512.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="Background/Timer1" to="." method="_on_Timer1_timeout"]

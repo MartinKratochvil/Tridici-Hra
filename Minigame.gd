@@ -26,6 +26,7 @@ func _ready():
 			5: 
 				next[i] = "E-waste"
 				get_node("Background/Conveyor/Item"+String(i)).set_texture(load("res://assets/Items/E-waste.png"))
+		$Background/Conveyor/Label.text = next[0]
 
 func _input(event):
 	if event is InputEventKey:
@@ -84,6 +85,7 @@ func _input(event):
 							ready = false
 							item = next[0]
 							$Background/Player/body/Sprite.set_texture(load("res://assets/Items/" + item +".png"))
+							$Background/Conveyor/Label.text = next[1]
 							$Background/Conveyor/Item0.set_texture(load("res://assets/Items/None.png"))
 							for i in 2: next[i] = next[i + 1]
 							$Background/Conveyor/AnimatedSprite.play("on")

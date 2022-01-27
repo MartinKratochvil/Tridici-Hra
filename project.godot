@@ -23,12 +23,16 @@ RestHandler="*res://addons/github-integration/scripts/RestHandler.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/github-integration/plugin.cfg" )
 
 [global]
 
 screen=false
 fullscreen=false
+
+[locale]
+
+fallback="cs_CZ"
 
 [physics]
 

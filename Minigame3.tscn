@@ -1,0 +1,483 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://assets/Backgrounds/Background-panel.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/Containers/Conveyor4.png" type="Texture" id=2]
+[ext_resource path="res://assets/Containers/Conveyor2.png" type="Texture" id=3]
+[ext_resource path="res://assets/Backgrounds/Background3.png" type="Texture" id=4]
+[ext_resource path="res://assets/Containers/Glass_Cont.png" type="Texture" id=5]
+[ext_resource path="res://assets/Items/Star-black.png" type="Texture" id=6]
+[ext_resource path="res://assets/Items/None.png" type="Texture" id=7]
+[ext_resource path="res://assets/Containers/Conveyor1.png" type="Texture" id=8]
+[ext_resource path="res://assets/Containers/Plastic_Cont.png" type="Texture" id=9]
+[ext_resource path="res://assets/Containers/Organic_Cont.png" type="Texture" id=10]
+[ext_resource path="res://assets/Containers/Paper_Cont.png" type="Texture" id=11]
+[ext_resource path="res://assets/Containers/E-waste_Cont.png" type="Texture" id=12]
+[ext_resource path="res://assets/Player/Player_l0.png" type="Texture" id=13]
+[ext_resource path="res://assets/Player/Player_d1.png" type="Texture" id=14]
+[ext_resource path="res://Player.gd" type="Script" id=15]
+[ext_resource path="res://Minigame.gd" type="Script" id=16]
+[ext_resource path="res://assets/Player/Player_u0.png" type="Texture" id=17]
+[ext_resource path="res://assets/Player/Player_u1.png" type="Texture" id=18]
+[ext_resource path="res://assets/Player/Player_l2.png" type="Texture" id=19]
+[ext_resource path="res://assets/Player/Player_r0.png" type="Texture" id=20]
+[ext_resource path="res://assets/Containers/Conveyor3.png" type="Texture" id=21]
+[ext_resource path="res://assets/Player/Player_r1.png" type="Texture" id=22]
+[ext_resource path="res://assets/Player/Player_d2.png" type="Texture" id=23]
+[ext_resource path="res://assets/Player/Player_l1.png" type="Texture" id=24]
+[ext_resource path="res://assets/Player/Player_d0.png" type="Texture" id=25]
+[ext_resource path="res://assets/Player/Player_r2.png" type="Texture" id=26]
+[ext_resource path="res://assets/Player/Player_u2.png" type="Texture" id=27]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 22 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 24 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "s_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "s_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "s_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "s_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 14 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18.3815, 6.73404 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 18.3815, 18.526 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 21 ), ExtResource( 2 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "on",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "off",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 58.1481, 15.6337 )
+
+[sub_resource type="DynamicFontData" id=16]
+font_path = "res://assets/DroidSans.ttf"
+
+[sub_resource type="DynamicFont" id=17]
+use_filter = true
+font_data = SubResource( 16 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 29.7555, 30.9638 )
+
+[sub_resource type="ConcavePolygonShape2D" id=15]
+segments = PoolVector2Array( 0, 0, 9, 0, 9, 0, 9, 9, 9, 9, 0, 9, 0, 9, 0, 0 )
+
+[sub_resource type="TileSet" id=14]
+0/name = "None.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 9, 9 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 15 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="DynamicFontData" id=18]
+font_path = "res://assets/DroidSans.ttf"
+
+[sub_resource type="DynamicFont" id=19]
+size = 32
+use_filter = true
+font_data = SubResource( 18 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/DroidSans.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+use_filter = true
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://assets/DroidSans.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+use_filter = true
+font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://assets/DroidSans.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 32
+use_filter = true
+font_data = SubResource( 11 )
+
+[node name="Minigame" type="Node2D"]
+script = ExtResource( 16 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 304 )
+scale = Vector2( 1.44167, 1.44167 )
+texture = ExtResource( 4 )
+
+[node name="Player" type="KinematicBody2D" parent="Background"]
+position = Vector2( -29.8267, 109.595 )
+script = ExtResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Background/Player"]
+position = Vector2( 10, 10 )
+scale = Vector2( 1.31007, 1.32777 )
+z_index = 2
+frames = SubResource( 4 )
+animation = "s_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Player"]
+position = Vector2( 10, 32.3989 )
+z_index = 2
+shape = SubResource( 1 )
+
+[node name="CanMove" type="Label" parent="Background/Player"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="body" type="Area2D" parent="Background/Player"]
+position = Vector2( 10, 10 )
+
+[node name="Sprite" type="Sprite" parent="Background/Player/body"]
+position = Vector2( 0, 15 )
+scale = Vector2( 0.0846182, 0.0846182 )
+z_index = 3
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Player/body"]
+position = Vector2( 0, 10.607 )
+scale = Vector2( 0.999999, 1 )
+z_index = 2
+shape = SubResource( 2 )
+
+[node name="Conveyor" type="Area2D" parent="Background"]
+position = Vector2( -465.434, -4.57764e-05 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Background/Conveyor"]
+position = Vector2( 164.692, 139.075 )
+scale = Vector2( 0.7, 0.7 )
+z_index = 1
+frames = SubResource( 5 )
+animation = "off"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Conveyor"]
+position = Vector2( 168.674, 139.395 )
+shape = SubResource( 6 )
+
+[node name="Item0" type="Sprite" parent="Background/Conveyor"]
+position = Vector2( 190, 120 )
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+texture = ExtResource( 7 )
+
+[node name="Item1" type="Sprite" parent="Background/Conveyor"]
+position = Vector2( 160, 120 )
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+texture = ExtResource( 7 )
+
+[node name="Item2" type="Sprite" parent="Background/Conveyor"]
+position = Vector2( 130, 120 )
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="Background/Conveyor"]
+margin_left = 121.389
+margin_top = 80.4623
+margin_right = 243.389
+margin_bottom = 99.4623
+custom_fonts/font = SubResource( 17 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paper" type="Area2D" parent="Background"]
+position = Vector2( -363.767, 42.659 )
+
+[node name="Sprite" type="Sprite" parent="Background/Paper"]
+position = Vector2( 266.601, -0.398637 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 1
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Paper"]
+position = Vector2( 266.358, 1.63741 )
+z_index = 1
+shape = SubResource( 3 )
+
+[node name="Plastic" type="Area2D" parent="Background"]
+position = Vector2( -293.015, 35.7226 )
+
+[node name="Sprite" type="Sprite" parent="Background/Plastic"]
+position = Vector2( 273.687, 6.68745 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Plastic"]
+position = Vector2( 273.988, 8.32371 )
+z_index = 1
+shape = SubResource( 3 )
+
+[node name="Glass" type="Area2D" parent="Background"]
+position = Vector2( -177.177, 62.0809 )
+
+[node name="Sprite" type="Sprite" parent="Background/Glass"]
+position = Vector2( 273.988, 5.54913 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Glass"]
+position = Vector2( 274.06, 6.34372 )
+z_index = 1
+shape = SubResource( 3 )
+
+[node name="Organic" type="Area2D" parent="Background"]
+position = Vector2( -68.6706, 58.9595 )
+
+[node name="Sprite" type="Sprite" parent="Background/Organic"]
+position = Vector2( 273.295, 6.2428 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 1
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Organic"]
+position = Vector2( 273.469, 7.68745 )
+z_index = 1
+shape = SubResource( 3 )
+
+[node name="E-waste" type="Area2D" parent="Background"]
+position = Vector2( 39.5376, 50.6358 )
+
+[node name="Sprite" type="Sprite" parent="Background/E-waste"]
+position = Vector2( 274.682, 7.63007 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 1
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/E-waste"]
+position = Vector2( 274.687, 8.68745 )
+z_index = 1
+shape = SubResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="Background"]
+position = Vector2( 1, 0 )
+tile_set = SubResource( 14 )
+cell_size = Vector2( 9, 9 )
+format = 1
+tile_data = PoolIntArray( 589810, 0, 0, 589811, 0, 0, 589812, 0, 0, 589813, 0, 0, 589814, 0, 0, 589815, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0, 655345, 0, 0, 589825, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 589863, 0, 0, 720880, 0, 0, 655362, 0, 0, 655390, 0, 0, 655399, 0, 0, 786402, 0, 0, 786403, 0, 0, 786404, 0, 0, 786405, 0, 0, 786406, 0, 0, 786407, 0, 0, 786408, 0, 0, 786409, 0, 0, 786410, 0, 0, 786411, 0, 0, 786412, 0, 0, 786413, 0, 0, 786414, 0, 0, 786415, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720935, 0, 0, 851938, 0, 0, 786471, 0, 0, 917474, 0, 0, 852007, 0, 0, 983010, 0, 0, 917543, 0, 0, 1048546, 0, 0, 983079, 0, 0, 1114082, 0, 0, 1048615, 0, 0, 1179618, 0, 0, 1114151, 0, 0, 1245154, 0, 0, 1179687, 0, 0, 1310690, 0, 0, 1310691, 0, 0, 1310692, 0, 0, 1310693, 0, 0, 1310694, 0, 0, 1310695, 0, 0, 1310696, 0, 0, 1310697, 0, 0, 1310698, 0, 0, 1310699, 0, 0, 1310700, 0, 0, 1310701, 0, 0, 1310702, 0, 0, 1310703, 0, 0, 1310704, 0, 0, 1310705, 0, 0, 1310706, 0, 0, 1310707, 0, 0, 1310708, 0, 0, 1310709, 0, 0, 1310710, 0, 0, 1310711, 0, 0, 1310712, 0, 0, 1310713, 0, 0, 1310714, 0, 0, 1310715, 0, 0, 1310716, 0, 0, 1310717, 0, 0, 1310718, 0, 0, 1310719, 0, 0, 1245184, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1245209, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245213, 0, 0, 1245214, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1245220, 0, 0, 1245221, 0, 0, 1245222, 0, 0, 1245223, 0, 0 )
+
+[node name="Timer1" type="Timer" parent="Background"]
+autostart = true
+
+[node name="Label1" type="Label" parent="Background"]
+margin_left = 188.67
+margin_top = -172.023
+margin_right = 268.67
+margin_bottom = -134.023
+custom_fonts/font = SubResource( 19 )
+text = "Time:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTime" type="Label" parent="Background"]
+margin_left = 266.358
+margin_top = -172.023
+margin_right = 346.358
+margin_bottom = -134.023
+custom_fonts/font = SubResource( 19 )
+text = "0s"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Background"]
+margin_left = -344.045
+margin_top = -172.023
+margin_right = -264.045
+margin_bottom = -134.023
+custom_fonts/font = SubResource( 19 )
+text = "Score:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelScore" type="Label" parent="Background"]
+margin_left = -244.161
+margin_top = -172.023
+margin_right = -154.161
+margin_bottom = -134.023
+custom_fonts/font = SubResource( 19 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelBody" type="StaticBody2D" parent="."]
+z_index = 4
+
+[node name="Panel" type="Panel" parent="PanelBody"]
+visible = false
+margin_left = 224.0
+margin_top = 64.0
+margin_right = 800.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="PanelBody/Panel"]
+position = Vector2( 288, 208 )
+scale = Vector2( 2.74837, 2.74837 )
+texture = ExtResource( 1 )
+
+[node name="Label1" type="Label" parent="PanelBody/Panel"]
+margin_left = 144.0
+margin_top = 168.0
+margin_right = 336.0
+margin_bottom = 208.0
+custom_fonts/font = SubResource( 8 )
+text = "Score:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="PanelBody/Panel"]
+margin_left = 144.0
+margin_top = 224.0
+margin_right = 328.0
+margin_bottom = 262.0
+custom_fonts/font = SubResource( 8 )
+text = "High score:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelScore" type="Label" parent="PanelBody/Panel"]
+margin_left = 288.0
+margin_top = 168.0
+margin_right = 384.0
+margin_bottom = 208.0
+custom_fonts/font = SubResource( 10 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelHighScore" type="Label" parent="PanelBody/Panel"]
+margin_left = 320.0
+margin_top = 224.0
+margin_right = 416.0
+margin_bottom = 264.0
+custom_fonts/font = SubResource( 10 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="PanelBody/Panel"]
+margin_left = 192.0
+margin_top = 320.0
+margin_right = 384.0
+margin_bottom = 368.0
+custom_fonts/font = SubResource( 12 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Star1" type="Sprite" parent="PanelBody/Panel"]
+position = Vector2( 160, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Star2" type="Sprite" parent="PanelBody/Panel"]
+position = Vector2( 288, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Star3" type="Sprite" parent="PanelBody/Panel"]
+position = Vector2( 416, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[connection signal="timeout" from="Background/Timer1" to="." method="_on_Timer1_timeout"]
+[connection signal="pressed" from="PanelBody/Panel/Button" to="." method="_on_Button_pressed"]

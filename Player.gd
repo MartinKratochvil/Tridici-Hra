@@ -10,7 +10,6 @@ var velocity = Vector2()
 var texture = load("res://assets/StickmanU.png")
 var dir = "down"
 var moving = false
-#$Sprite.set_texture(load("res://assets/StickmanR.png"))
 
 func get_input():
 	velocity = Vector2()
